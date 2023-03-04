@@ -1,12 +1,19 @@
 friends = []
+# def addtolist(length):
+#     n = 1
+#     while n <= length:
+#         name = input(str(n) + '-whats is the name? ')
+#         friends.append(name)
+#         n = n+1
+#     print('i found ' ,(n-1) ,' friends')
 
-def addtolist(length):
-    n = 1
-    while n <= length:
-        name = input(str(n) + '-whats is the name? ')
+def addtolist():
+    x = True
+    while x:
+        name = input(str(len(friends)+1) + '-whats is the name? ')
+        if name == "-end":
+            return friends
         friends.append(name)
-        n = n+1
-    print('i found ' ,(n-1) ,' friends')
 
 def showlist():
     for i in friends:
@@ -17,5 +24,5 @@ def showlist():
     #     print(friends[i])
     #     i += 1
 
-addtolist(int(input("length of list? ")))
+addtolist()
 showlist()
