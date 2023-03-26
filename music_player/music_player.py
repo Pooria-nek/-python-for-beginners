@@ -30,16 +30,16 @@ def Play_Music():
     mixer.music.load(Playlist.get(ACTIVE))
     mixer.music.play()
 
-#icon
-Icon_Image = PhotoImage(file="logo.png")
-root.iconphoto(False,Icon_Image = PhotoImage(file="logo.png"))
+# #icon
+# Icon_Image = PhotoImage(file="logo.png")
+# root.iconphoto(False,Icon_Image = PhotoImage(file="logo.png"))
  
-Top_Image = PhotoImage(file="top.png")
-Label(root, image=Top_Image, bg="#0f1a2b").pack()
+# Top_Image = PhotoImage(file="top.png")
+# Label(root, image=Top_Image, bg="#0f1a2b").pack()
  
-# logo
-logo_Image = PhotoImage(file="logo.png")
-Label(root, image=logo_Image, bg="#0f1a2b").place(x=65, y=115)
+# # logo
+# logo_Image = PhotoImage(file="logo.png")
+# Label(root, image=logo_Image, bg="#0f1a2b").place(x=65, y=115)
 
 #music
 # Menu = PhotoImage(file="menu.png")
