@@ -1,24 +1,4 @@
-# its just a calculator program 
-
-# a function for add two number
-def add(x, y):
-    return x + y
-
-# a function for subtract two number
-def subtract(x, y):
-    return x - y
-
-# a function for multiply two number
-def multiply(x, y):
-    return x * y
-
-# a function for divide two number
-def divide(x, y):
-    return x / y
-
-# a function for power two number
-def power(x, y):
-    return x ** y
+# its just a simple calculator program 
 
 print("+ - * / ^")
 opration = str(input("select opration: "))
