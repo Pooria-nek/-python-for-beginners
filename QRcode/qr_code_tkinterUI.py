@@ -21,7 +21,7 @@ root.geometry("400x400")
 frame = Frame(root)
 frame.pack()
 
-generate_button = tk.Button(frame, text="Generate QR Code", command=generate_qr)
+generate_button = tk.Button(frame, text="Generate QR-Code", command=generate_qr)
 generate_button.pack(side=LEFT, pady=10, padx=10)
 
 qr_text = tk.Entry(frame, font=("Helvetica", 16))
