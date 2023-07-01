@@ -10,16 +10,16 @@ class QRCodeGenerator:
         self.root.title('QR Code Generator')
         self.root.geometry("400x400")
         #Make the window resizable false
-        self.root.resizable(False,False)
-
-        self.generate_button = tk.Button(self.root, text="Generate QR-Code", command=self.generate_qr)
-        self.generate_button.pack(pady=10, padx=10)
-
-        self.qr_text = tk.Entry(self.root, font=("Helvetica", 16))
-        self.qr_text.pack(pady=10, padx=10)
+        # self.root.resizable(False,False)
 
         self.panel = tk.Label(self.root)
-        self.panel.pack(pady=10)
+        self.panel.pack(pady=5)
+
+        self.qr_text = tk.Entry(self.root, font=("Helvetica", 16))
+        self.qr_text.pack(pady=5, padx=5)
+
+        self.generate_button = tk.Button(self.root, text="Generate QR-Code", command=self.generate_qr)
+        self.generate_button.pack(pady=5, padx=5)
 
     def generate_qr(self):
         qr_data = self.qr_text.get()
