@@ -1,5 +1,5 @@
 import cv2
-import pyzbar.pyzbar as pyzbar
+from pyzbar.pyzbar import decode
 import numpy as np
 
 cap = cv2.VideoCapture(0)
@@ -9,7 +9,7 @@ cap = cv2.VideoCapture(0)
 while True:
     ret, frame = cap.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    decoded = pyzbar.decode(gray)
+    decoded = decode(gray)
     for obj in decoded:
         print("Data: ", obj.data)
         pts = np.array([obj.polygon], np.int32,)
