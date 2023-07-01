@@ -13,7 +13,7 @@ class QRCodeGenerator:
         # self.root.resizable(False,False)
 
         self.panel = tk.Label(self.root)
-        self.panel.pack(pady=5)
+        self.panel.pack(pady=5, padx=5)
 
         self.qr_text = tk.Entry(self.root, font=("Helvetica", 16))
         self.qr_text.pack(pady=5, padx=5)
