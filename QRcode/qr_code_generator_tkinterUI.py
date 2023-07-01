@@ -3,31 +3,42 @@ import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
 
-def generate_qr():
-    qr_data = qr_text.get()
-    qr = pyqrcode.create(qr_data)
-    qr.png('qr.png', scale=8)
+class QRCodeGenerator:
+    def __init__(self):
+        # Create the main window
+        self.root = tk.Tk()
+        self.root.title('QR Code Generator')
+        self.root.geometry("400x400")
+        #Make the window resizable false
+        self.root.resizable(False,False)
 
-    img = Image.open('qr.png')
-    img = img.resize((300, 300), Image.ANTIALIAS)
-    img = ImageTk.PhotoImage(img)
-    panel.configure(image=img)
-    panel.image = img
+        self.generate_button = tk.Button(self.root, text="Generate QR-Code", command=self.generate_qr)
+        self.generate_button.pack(pady=10, padx=10)
 
-root = tk.Tk()
-root.title("QR Code Generator")
-root.geometry("400x400")
+        self.qr_text = tk.Entry(self.root, font=("Helvetica", 16))
+        self.qr_text.pack(pady=10, padx=10)
 
-frame = Frame(root)
-frame.pack()
+        self.panel = tk.Label(self.root)
+        self.panel.pack(pady=10)
 
-generate_button = tk.Button(frame, text="Generate QR-Code", command=generate_qr)
-generate_button.pack(side=LEFT, pady=10, padx=10)
+    def generate_qr(self):
+        qr_data = self.qr_text.get()
+        qr = pyqrcode.create(qr_data)
+        qr.png('qr.png', scale=8)
 
-qr_text = tk.Entry(frame, font=("Helvetica", 16))
-qr_text.pack(side=LEFT, pady=10, padx=10)
+        img = Image.open('qr.png')
+        img = img.resize((300, 300), Image.ANTIALIAS)
+        img = ImageTk.PhotoImage(img)
+        self.panel.configure(image=img)
+        self.panel.image = img
 
-panel = tk.Label(root)
-panel.pack(pady=10)
+    def run(self):
+        self.root.mainloop()
 
-root.mainloop()
+# root = tk.Tk()
+# root.title("QR Code Generator")
+# root.geometry("400x400")
+
+if __name__ == '__main__':
+    generator = QRCodeGenerator()
+    generator.run()
