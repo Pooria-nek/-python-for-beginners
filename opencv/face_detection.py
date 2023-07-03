@@ -20,11 +20,16 @@ while True:
 
     op = face.process(rgb)
 
+    # print(op.multi_face_landmarks.landmark[0].x)
+    # break
+
     # print(dir(op))
     # print(op.multi_face_landmarks)
 
     if op.multi_face_landmarks:
         for i in op.multi_face_landmarks:
+            print(i.landmark[0].x * 680)
+            print(i.landmark[0].y * 460)
             draw.draw_landmarks(frame, i, facemesh.FACEMESH_FACE_OVAL, landmark_drawing_spec = draw.DrawingSpec(color = (120, 0, 0), thickness = 1, circle_radius = 1))
 
 
